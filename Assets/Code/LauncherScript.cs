@@ -21,9 +21,9 @@ public class LauncherScript : MonoBehaviour {
     [SerializeField]
     List<Sprite> appearances;
 
-    List<int> HumidityValue = new List<int>() { 10, 0, -5};
-    List<int> HeatValue = new List<int>() { -5, 10, 0 };
-    List<int> AtmosValue = new List<int>() { 0, -5, 10 };
+    List<int> HumidityValue = new List<int>() { 10, 0, 0};
+    List<int> HeatValue = new List<int>() { 0, 10, 0 };
+    List<int> AtmosValue = new List<int>() { 0, 0, 10 };
 
     //EndH
 

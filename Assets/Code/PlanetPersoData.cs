@@ -8,10 +8,15 @@ public class PlanetPersoData : MonoBehaviour {
 
     public SatelliteMovement satellite;
 
+    public int state;
+
     public GameManager gM;
 
     [SerializeField]
     GameObject meteorSpawner;
+
+    [SerializeField]
+    List<Sprite> appearances;
 
     public int humidity;
     public int heat;
@@ -30,11 +35,29 @@ public class PlanetPersoData : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        string actualHum = "Humidity : " + humidity + " / " + humidityRequire;
-        string actualHeat = "Heat : " + heat + " / " + heatRequire;
-        string actualAtmos = "Atmosphere : " + atmosphere + " / " + atmosphereRequire;
+        string actualHum =  humidity + " / " + humidityRequire;
+        string actualHeat = heat + " / " + heatRequire;
+        string actualAtmos =  atmosphere + " / " + atmosphereRequire;
+
+        if (humidity >= humidityRequire && humidity < humidityRequire + 100 && heat >= heatRequire && heat < heatRequire + 100 && atmosphere >= atmosphereRequire && atmosphere < atmosphereRequire + 100)
+        {
+            state = 1;
+        }
+        else
+        {
+            if (humidity >= humidityRequire + 100)
+                state = 2;
+
+            else if (heat >= heatRequire + 100)
+                state = 3;
+            else
+                state = 0;
+        }
+
+        gameObject.GetComponent<SpriteRenderer>().sprite = appearances[state];
 
         gM.updateState(actualHum, actualHeat, actualAtmos);
+        gM.updateStatus(state);
 
 
 	}

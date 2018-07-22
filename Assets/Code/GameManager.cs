@@ -19,7 +19,19 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     GameObject UI;
 
+    [SerializeField]
+    GameObject toInactivPhase3;
+    [SerializeField]
+    GameObject toActivePhase3;
+
+    [SerializeField]
+    Image imgStatus;
+
+    [SerializeField]
+    List<Sprite> statusIM;
+
     public List<GameObject> planets;
+    public List<int> planetSuccess;
 
     public int phase = 1;
 
@@ -87,10 +99,10 @@ public class GameManager : MonoBehaviour {
     public void setphase(int _phase)
     {
         phase = _phase;
-        if(phase == 3)
-        {
-            
-        }
+        if (phase != 3)
+            toInactivPhase3.SetActive(true);
+        else
+            toActivePhase3.SetActive(true);
     }
 
     public void updateState(string _humidity, string _heat, string _atmos)
@@ -98,6 +110,11 @@ public class GameManager : MonoBehaviour {
         HumidityBox.text = _humidity;
         HeatBox.text = _heat;
         AtmosphereBox.text = _atmos;
+    }
+
+    public void updateStatus(int state)
+    {
+        imgStatus.sprite = statusIM[state];
     }
 
 }

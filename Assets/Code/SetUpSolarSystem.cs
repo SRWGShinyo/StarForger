@@ -34,6 +34,7 @@ public class SetUpSolarSystem : MonoBehaviour {
     {
         planetColors = planetColors.OrderBy(x => Random.value).ToList();
         GameManager gM = gameManager.GetComponent<GameManager>();
+        int intensity = gM.getIntensity();
         for (int i = 1; i < number + 1; i++)
         {
             float radiusRange = radius + (1f + Random.Range(0f, 0.7f)) * (i - 1);
@@ -43,10 +44,34 @@ public class SetUpSolarSystem : MonoBehaviour {
             planet.GetComponent<TrailRenderer>().material.SetColor("_Color", planetColors[i - 1]);
             planet.name = "Planet " + i;
             planet.GetComponent<PlanetPersoData>().gM = gM;
+            if( intensity <= 50)
+            {
+                planet.GetComponent<PlanetPersoData>().humidityRequire = 400;
+                planet.GetComponent<PlanetPersoData>().heatRequire = 400;
+                planet.GetComponent<PlanetPersoData>().atmosphereRequire = 400;
+            }
+
+            else if (intensity <= 100)
+            {
+                planet.GetComponent<PlanetPersoData>().humidityRequire = 300;
+                planet.GetComponent<PlanetPersoData>().heatRequire = 300;
+                planet.GetComponent<PlanetPersoData>().atmosphereRequire = 300;
+            }
+
+            else
+            {
+                planet.GetComponent<PlanetPersoData>().humidityRequire = 200;
+                planet.GetComponent<PlanetPersoData>().heatRequire = 200;
+                planet.GetComponent<PlanetPersoData>().atmosphereRequire = 200;
+            }
+
+
+
             planet.GetComponent<PlanetMovement>().speed = speed;
             planet.GetComponent<PlanetMovement>().setRadius(radiusRange);
             planet.GetComponent<PlanetMovement>().go = true;
             gM.planets.Add(planet);
+            gM.planetSuccess.Add(2);
         }
         
     }

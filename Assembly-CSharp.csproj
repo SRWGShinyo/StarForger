@@ -66,6 +66,8 @@
     <Compile Include="Assets\Code\EnergyRandom.cs" />
     <Compile Include="Assets\Code\GameManager.cs" />
     <Compile Include="Assets\Code\HandleMetMov.cs" />
+    <Compile Include="Assets\Code\InactiveAtPhase3.cs" />
+    <Compile Include="Assets\Code\InactiveInOtherPhaseThan3.cs" />
     <Compile Include="Assets\Code\LauncherScript.cs" />
     <Compile Include="Assets\Code\MeteoreCrate.cs" />
     <Compile Include="Assets\Code\MeteorP3.cs" />

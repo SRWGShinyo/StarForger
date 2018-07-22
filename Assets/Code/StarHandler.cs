@@ -35,7 +35,10 @@ public class StarHandler : MonoBehaviour {
         if (center && Vector2.MoveTowards(transform.position, centerS.transform.position, step) == (Vector2)centerS.transform.position)
         {
             center = false;
-            GetComponent<SetUpSolarSystem>().CreatePlanet(radius, 4);
+            int numberPlanet = 2 + (int)(gameManager.GetComponent<GameManager>().getIntensity() / 40);
+            if (numberPlanet > 6)
+                numberPlanet = 6;
+            GetComponent<SetUpSolarSystem>().CreatePlanet(radius, numberPlanet);
         }
     }
 
