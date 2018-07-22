@@ -2122,19 +2122,32 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114901153281511914, guid: 9d39de4c3d11440498d85c1d5792cd7c,
+    - target: {fileID: 114015973439117586, guid: 9d39de4c3d11440498d85c1d5792cd7c,
         type: 2}
       propertyPath: textBox
       value: 
       objectReference: {fileID: 1431829082}
-    - target: {fileID: 114901153281511914, guid: 9d39de4c3d11440498d85c1d5792cd7c,
+    - target: {fileID: 114015973439117586, guid: 9d39de4c3d11440498d85c1d5792cd7c,
+        type: 2}
+      propertyPath: HumidityBox
+      value: 
+      objectReference: {fileID: 304646661}
+    - target: {fileID: 114015973439117586, guid: 9d39de4c3d11440498d85c1d5792cd7c,
+        type: 2}
+      propertyPath: HeatBox
+      value: 
+      objectReference: {fileID: 328705733}
+    - target: {fileID: 114015973439117586, guid: 9d39de4c3d11440498d85c1d5792cd7c,
+        type: 2}
+      propertyPath: AtmosphereBox
+      value: 
+      objectReference: {fileID: 1524470459}
+    - target: {fileID: 114015973439117586, guid: 9d39de4c3d11440498d85c1d5792cd7c,
         type: 2}
       propertyPath: UI
       value: 
       objectReference: {fileID: 1021445254}
-    m_RemovedComponents:
-    - {fileID: 114901153281511914, guid: 9d39de4c3d11440498d85c1d5792cd7c, type: 2}
-    - {fileID: 114094978305441728, guid: 9d39de4c3d11440498d85c1d5792cd7c, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9d39de4c3d11440498d85c1d5792cd7c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1404070339
@@ -3208,38 +3221,6 @@ GameObject:
   m_PrefabParentObject: {fileID: 1928354123490956, guid: 9d39de4c3d11440498d85c1d5792cd7c,
     type: 2}
   m_PrefabInternal: {fileID: 1321700963}
---- !u!114 &2075704245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2075704244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e5383392d6900d47b202c5181bf1d44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Energy: {fileID: 1786685595030314, guid: c7ad72f6ff14cbc42a176c83579fc7ee, type: 2}
---- !u!114 &2075704246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2075704244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10a265fe11ca0ca42b397b864132f16e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textBox: {fileID: 1431829082}
-  HumidityBox: {fileID: 0}
-  HeatBox: {fileID: 0}
-  AtmosphereBox: {fileID: 0}
-  intensity: 0
-  UI: {fileID: 1021445254}
-  planets: []
-  phase: 1
-  inTime: 0
 --- !u!1 &2107520203
 GameObject:
   m_ObjectHideFlags: 0

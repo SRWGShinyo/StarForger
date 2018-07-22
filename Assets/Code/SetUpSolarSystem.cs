@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class SetUpSolarSystem : MonoBehaviour {
 
@@ -10,10 +11,17 @@ public class SetUpSolarSystem : MonoBehaviour {
     [SerializeField]
     GameObject gameManager;
 
+    List<Color> planetColors = new List<Color>() {
+        Color.HSVToRGB(0.0083f, 0.7f, 0.94f),
+        Color.HSVToRGB(0.0639f, 0.7f, 0.94f),
+        Color.HSVToRGB(0.617f, 0.7f, 0.94f),
+        Color.HSVToRGB(0.78f, 0.7f, 0.94f),
+        Color.HSVToRGB(0.9528f, 0.7f, 0.94f),
+        Color.HSVToRGB(0.258f, 0.58f, 0.49f),
+    };
 
-
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
@@ -24,6 +32,7 @@ public class SetUpSolarSystem : MonoBehaviour {
 
     public void CreatePlanet(float radius, int number)
     {
+        planetColors = planetColors.OrderBy(x => Random.value).ToList();
         GameManager gM = gameManager.GetComponent<GameManager>();
         for (int i = 1; i < number + 1; i++)
         {
@@ -31,7 +40,7 @@ public class SetUpSolarSystem : MonoBehaviour {
             float speed = Random.Range(20f, 60f);
 
             GameObject planet = Instantiate(planetPrefab);
-            planet.GetComponent<TrailRenderer>().material.SetColor("_Color", Random.ColorHSV());
+            planet.GetComponent<TrailRenderer>().material.SetColor("_Color", planetColors[i - 1]);
             planet.name = "Planet " + i;
             planet.GetComponent<PlanetPersoData>().gM = gM;
             planet.GetComponent<PlanetMovement>().speed = speed;

@@ -19,8 +19,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4878325757567138}
-  - component: {fileID: 114901153281511914}
-  - component: {fileID: 114094978305441728}
+  - component: {fileID: 114439700346396064}
+  - component: {fileID: 114015973439117586}
   m_Layer: 0
   m_Name: MainManager
   m_TagString: Untagged
@@ -41,19 +41,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114094978305441728
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1928354123490956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e5383392d6900d47b202c5181bf1d44, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Energy: {fileID: 1786685595030314, guid: c7ad72f6ff14cbc42a176c83579fc7ee, type: 2}
---- !u!114 &114901153281511914
+--- !u!114 &114015973439117586
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -65,6 +53,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 0}
+  HumidityBox: {fileID: 0}
+  HeatBox: {fileID: 0}
+  AtmosphereBox: {fileID: 0}
   intensity: 0
   UI: {fileID: 0}
+  planets: []
+  phase: 1
   inTime: 0
+--- !u!114 &114439700346396064
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1928354123490956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e5383392d6900d47b202c5181bf1d44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Energy: {fileID: 1786685595030314, guid: c7ad72f6ff14cbc42a176c83579fc7ee, type: 2}
