@@ -139,15 +139,41 @@ public class LauncherScript : MonoBehaviour {
 
         Instantiate(meteorP3Pref, transform);
         meteorP3Pref.transform.position = transform.position;
-        meteorP3Pref.GetComponent<SpriteRenderer>().sprite = appearances[chosen];
+        switch(chosen)
+        {
+            case 0:
+                int spriteEau = (int)Random.Range(0, 4);
+                meteorP3Pref.GetComponent<SpriteRenderer>().sprite = appearances[spriteEau];
+                break;
+            case 1:
+                int spriteFeu = (int)Random.Range(5, 9);
+                meteorP3Pref.GetComponent<SpriteRenderer>().sprite = appearances[spriteFeu];
+                break;
+            case 2:
+                int spriteAtm = (int)Random.Range(10, 14);
+                meteorP3Pref.GetComponent<SpriteRenderer>().sprite = appearances[spriteAtm];
+                break;
+        }
         MeteorP3 handleType = meteorP3Pref.GetComponent<MeteorP3>();
         handleType.giveHumidity = HumidityValue[chosen];
         handleType.giveHeat = HeatValue[chosen];
         handleType.giveAtm = AtmosValue[chosen];
         handleType.refPlanet = refPlanet;
-        
-        handleType.setDestination(spawnerBro[(int)Random.Range(0, spawnerBro.Count - 1)].transform);
-       
 
+        int index = (int)Random.Range(0, spawnerBro.Count);
+        handleType.setDestination(spawnerBro[index].transform.position);
+        
+
+    }
+
+    private void PrintBrother()
+    {
+        string res = gameObject.name + " : ";
+        for(int i = 0; i < spawnerBro.Count; i++)
+        {
+            res += " " + spawnerBro[i].name;
+        }
+
+        Debug.Log(res);
     }
 }

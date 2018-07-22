@@ -8,6 +8,8 @@ public class PlanetPersoData : MonoBehaviour {
 
     public SatelliteMovement satellite;
 
+    public GameManager gM;
+
     [SerializeField]
     GameObject meteorSpawner;
 
@@ -27,13 +29,21 @@ public class PlanetPersoData : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+        string actualHum = "Humidity : " + humidity + " / " + humidityRequire;
+        string actualHeat = "Heat : " + heat + " / " + heatRequire;
+        string actualAtmos = "Atmosphere : " + atmosphere + " / " + atmosphereRequire;
+
+        gM.updateState(actualHum, actualHeat, actualAtmos);
+
+
 	}
 
     public void SetUpPhase3()
     {
         Cursor.visible = false;
         satellite.gameObject.SetActive(true);
+        satellite.stateSat = 2;
         SetUpSpawner(12);
     }
 

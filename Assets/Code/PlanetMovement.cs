@@ -16,14 +16,17 @@ public class PlanetMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        if(go)
-            transform.RotateAround(new Vector3(0f,0f,0f), new Vector3(0f, 0f,1f),speed*Time.deltaTime);
+        float speed = 1.0f / Mathf.Sqrt(Radius) * 3.5f;
+
+        if (go)
+            transform.RotateAround(new Vector3(0f,0f,0f), new Vector3(0f, 0f,1f),speed);
     }
 
     public void setRadius(float _radius)
     {
         Radius = _radius;
-        transform.position = new Vector3(Radius, 0f, 0f);
+        float degree = 2.0f * Mathf.PI * Random.Range(0.0f, 1.0f);
+        transform.position = Radius * new Vector3(Mathf.Cos(degree), Mathf.Sin(degree), 0f);
     }
     public float getRadius()
     { return Radius; }

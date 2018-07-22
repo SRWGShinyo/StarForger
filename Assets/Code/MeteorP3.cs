@@ -12,8 +12,8 @@ public class MeteorP3 : MonoBehaviour {
 
     public bool startMove;
 
-    [SerializeField]
-    Transform destination;
+    
+    public Vector3 destination;
 
 	// Use this for initialization
 	void Start () {
@@ -23,19 +23,18 @@ public class MeteorP3 : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        float step = 7f * Time.deltaTime;
-
+        float step = 5f * Time.deltaTime;
         if(startMove)
         {
-            transform.position = Vector2.MoveTowards(transform.position, destination.position, step);
-            if (Vector2.MoveTowards(transform.position, destination.position, step) == (Vector2)destination.position)
+            transform.position = Vector2.MoveTowards(transform.position, destination, step);
+            if (Vector2.MoveTowards(transform.position, destination, step) == (Vector2)destination)
                 Destroy(gameObject);
         }
 
 
 	}
 
-    public void setDestination(Transform _destination)
+    public void setDestination(Vector3 _destination)
     {
         destination = _destination;
         startMove = true;
@@ -43,17 +42,20 @@ public class MeteorP3 : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Satellite")
+        
+        if (collision.gameObject.tag == "Satellite")
         {
-            if(Input.GetMouseButtonDown(0))
+            
+            if(collision.gameObject.GetComponent<SatelliteMovement>().stateSat == 0)
             {
+                
                 refPlanet.GetComponent<PlanetPersoData>().humidity += giveHumidity;
                 refPlanet.GetComponent<PlanetPersoData>().heat += giveHeat;
                 refPlanet.GetComponent<PlanetPersoData>().atmosphere += giveAtm;
                 Destroy(gameObject);
             }
 
-            else if(Input.GetMouseButtonDown(1))
+            else if (collision.gameObject.GetComponent<SatelliteMovement>().stateSat == 1)
             {
                 Destroy(gameObject);
             }

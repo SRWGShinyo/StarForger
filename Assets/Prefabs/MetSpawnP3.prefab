@@ -58,9 +58,21 @@ MonoBehaviour:
   meteorP3Pref: {fileID: 1712926937715540, guid: cc8f11f56d5d4e3478bfb2cac25f1a44,
     type: 2}
   appearances:
+  - {fileID: 21300000, guid: 21b6623524345d9458af3f5bca5aabf6, type: 3}
+  - {fileID: 21300000, guid: c1905160b1b00504ea767d142ea6134e, type: 3}
+  - {fileID: 21300000, guid: 396cf7cbb7ff6da4caaa397b855f286f, type: 3}
+  - {fileID: 21300000, guid: b79e27bba8a1dbf42a85f98b381910ea, type: 3}
+  - {fileID: 21300000, guid: f5d620fd1131a944ba550c2cf0b4df58, type: 3}
+  - {fileID: 21300000, guid: fe942fc5d392075458843b242d520818, type: 3}
+  - {fileID: 21300000, guid: 240480ac399ec59449e45b0b51cfbea2, type: 3}
+  - {fileID: 21300000, guid: 062679f987c21eb4e946766488ed8730, type: 3}
+  - {fileID: 21300000, guid: 469368ded74b52c41b1f0cded1b9a0ae, type: 3}
+  - {fileID: 21300000, guid: 6d461da09207f25408af19c4f8f86440, type: 3}
+  - {fileID: 21300000, guid: f7a4ebab80a7e3846ba6135d393b52bf, type: 3}
+  - {fileID: 21300000, guid: 64ed1617208954e47a6547a61a1645a1, type: 3}
   - {fileID: 21300000, guid: 7b40fbdcbbccd76438e051deb798d7e3, type: 3}
   - {fileID: 21300000, guid: 88220fe82eb2f214fb2c52f47fd6f3fe, type: 3}
-  - {fileID: 21300000, guid: 64ed1617208954e47a6547a61a1645a1, type: 3}
+  - {fileID: 21300000, guid: 109b5e276e2a727408c4814bacacbcf4, type: 3}
 --- !u!212 &212922962922398722
 SpriteRenderer:
   m_ObjectHideFlags: 1

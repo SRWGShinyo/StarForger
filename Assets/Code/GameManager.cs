@@ -8,6 +8,13 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     Text textBox;
     [SerializeField]
+    Text HumidityBox;
+    [SerializeField]
+    Text HeatBox;
+    [SerializeField]
+    Text AtmosphereBox;
+
+    [SerializeField]
     int intensity;
     [SerializeField]
     GameObject UI;
@@ -80,6 +87,17 @@ public class GameManager : MonoBehaviour {
     public void setphase(int _phase)
     {
         phase = _phase;
+        if(phase == 3)
+        {
+            
+        }
+    }
+
+    public void updateState(string _humidity, string _heat, string _atmos)
+    {
+        HumidityBox.text = _humidity;
+        HeatBox.text = _heat;
+        AtmosphereBox.text = _atmos;
     }
 
 }
